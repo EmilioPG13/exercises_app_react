@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 312b2381e7170ca6f14d3d42daf1544a2393dccb
 # exercises_app_react
 Proyect developed to practice react with one of my passions, exercise :)
 =======
