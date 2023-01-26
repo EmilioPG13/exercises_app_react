@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 
-function SearchExercises() {
+const SearchExercises = () => {
   return (
-    <div>SearchExercises</div>
+    <Stack alignItems='center' mt='37px' justifyContent='center' p='20px'>
+      <Typography fontWeight={700} sx={{ fontSiize: { lg: '44px', xs: '30px' }}} mb='50px' textAlign='center'>
+        Exercises You <br/>
+        Should Know
+      </Typography>
+      <Box position='relative' mb='72px'>
+        <TextField 
+          height='76px'
+          value= ''
+          onChange={(e) => {}}
+          placeholder='Search Exercises'
+          type='text'
+        />
+      </Box>
+    </Stack>
   )
 }
 
