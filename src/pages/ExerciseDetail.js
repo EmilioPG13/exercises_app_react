@@ -10,7 +10,7 @@ import SimilarExercises from '../components/SimilarExercises'
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({})
-  const [ExerciseVideos, setExerciseVideos] = useState([])
+  const [exerciseVideos, setExerciseVideos] = useState([])
   const { id } = useParams()
 
   useEffect(() => {
@@ -21,8 +21,8 @@ const ExerciseDetail = () => {
       const exerciseDetailData = await fetchData(`${exerciseDBUrl}/exercises/exercise/${id}`,exerciseOptions)
       setExerciseDetail(exerciseDetailData);
 
-      const ExerciseVideosData = await fetchData(`${youTubeSearchUrl}/search?q=${exerciseDetail.name}`, youtubeOptions)
-      setExerciseVideos(ExerciseVideosData)
+      const exerciseVideosData = await fetchData(`${youTubeSearchUrl}/search?q=${exerciseDetail.name}`, youtubeOptions)
+      setExerciseVideos(exerciseVideosData)
     }
     fetchExercisesData();
   }, [id])
@@ -30,7 +30,7 @@ const ExerciseDetail = () => {
   return (
     <Box>
       <Detail exerciseDetail={exerciseDetail}/>
-      <ExerciseVideos ExerciseVideos={ExerciseVideos} name={exerciseDetail.name}/>
+      <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name}/>
       <SimilarExercises />
     </Box>
   )
