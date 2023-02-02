@@ -16,14 +16,15 @@ const ExerciseDetail = () => {
   useEffect(() => {
     const fetchExercisesData = async () => {
       const exerciseDBUrl = 'https://exercisedb.p.rapidapi.com'
-      const youTubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com/channel/about'
+      const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com/channel/about'
     
       const exerciseDetailData = await fetchData(`${exerciseDBUrl}/exercises/exercise/${id}`,exerciseOptions)
       setExerciseDetail(exerciseDetailData);
 
-      const exerciseVideosData = await fetchData(`${youTubeSearchUrl}/search?q=${exerciseDetail.name}`, youtubeOptions)
-      setExerciseVideos(exerciseVideosData)
+      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=${exerciseDetailData.name} exercise`, youtubeOptions);
+      setExerciseVideos(exerciseVideosData.contents);
     }
+
     fetchExercisesData();
   }, [id])
 
