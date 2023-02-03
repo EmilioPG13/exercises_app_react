@@ -1,8 +1,18 @@
 import React from 'react'
+import { Box, Stack, Typography } from '@mui/material'
 
-function Footer() {
+import Logo from '../assets/images/Logo-1.png'
+
+const Footer = () => {
   return (
-    <div>Footer</div>
+    <Box mt='80px' bgcolor='#fff3f4'>
+      <Stack gap='40' alignItems='center' px='40px' pt='24px'>
+        <img src={Logo} alt='logo' width='200px' height='40px' />
+        <Typography variant='h5' pb='40px' mt='20px'>
+          Made by Emilio PG using JavaScript
+        </Typography>
+      </Stack>
+    </Box>
   )
 }
 
