@@ -1,6 +1,6 @@
 # exercises_app_react
 Proyect developed to practice react with one of my passions, exercise :)
-=======
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
